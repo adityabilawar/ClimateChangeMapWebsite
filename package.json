@@ -4,8 +4,8 @@
   "description": "climate change map",
   "private": "true",
   "scripts": {
-    "serve": "./node_modules/.bin/webpack serve",
-    "build": "./node_modules/.bin/webpack"
+    "serve": "./node_modules/.bin/webpack serve --mode development",
+    "prod": "./node_modules/.bin/webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/adityabilawar/ClimateChangeMapWebsite#readme",
   "dependencies": {},
   "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
