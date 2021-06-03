@@ -55,6 +55,13 @@ export class Modal {
             this.DOMremove();
         }.bind(this), 100);
     }
+    form() {
+        //lol not sure it this works - aditya
+        this.hide();
+        if(yesButton){
+            this.show();
+        }
+    }
 }
 
 export class ConfirmModal extends Modal {
