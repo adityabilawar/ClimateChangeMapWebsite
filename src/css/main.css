@@ -1,5 +1,307 @@
+:root {
+    --main-background: hsl(0, 0%, 100%);
+    --main-text-color: #143052;
+    --accent-hs: 205, 83%;
+    --color: #158ee5;
+    --light-accent-color: hsl(var(--accent-hs), 90%);
+    --accent-color: hsl(var(--accent-hs), 49%);
+    --accent-hover: hsl(var(--accent-hs), 90%);
+    --accent-active: hsl(var(--accent-hs), 80%);
+    --accent-selected: hsl(var(--accent-hs), 75%);
+    --hover: hsla(216, 10%, 80%, 40%);
+    --light-gray: hsl(216, 10%, 90%);
+    --gray: hsl(216, 10%, 80%);
+    --dark-gray: hsl(216, 10%, 40%);
+    --button-color: #5c6470;
+    /* --shadow: 0 1px 2px 0 hsla(206, 6%, 25%, 0.3), 0 2px 6px 2px hsla(206, 6%, 25%, 0.1); */
+    --shadow: 0 1px 2px 0 hsla(206, 6%, 25%, 0.3), 0 2px 6px 2px hsla(206, 6%, 25%, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-background: hsl(213, 5%, 10%);
+        --main-text-color: hsl(0, 0%, 60%);
+        --accent-hs: 205, 33%;
+        --hover: hsla(216, 10%, 30%, 40%);
+        --light-accent-color: hsl(var(--accent-hs), 20%);
+        --accent-color: hsl(var(--accent-hs), 49%);
+        --accent-hover: hsl(var(--accent-hs), 15%);
+        --accent-active: hsl(var(--accent-hs), 20%);
+        --accent-selected: hsl(var(--accent-hs), 25%);
+        --light-gray: hsl(216, 10%, 20%);
+        --gray: hsl(216, 10%, 25%);
+        --dark-gray: hsl(216, 10%, 45%);
+        --button-color: #5c6470;
+        --shadow: 0 1px 2px 0 hsla(206, 6%, 55%, 0.3), 0 2px 6px 2px hsla(206, 6%, 55%, 0.1);
+    }
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    background: var(--main-background);
+    color: var(--main-text-color);
+    font-family: 'Roboto', sans-serif;
+    padding: 60px 0 0 0;
+    margin: 0;
+    user-select: none;
+}
+
 #map {
     height: 800px;
     width: 100%;
 }
 
+a {
+    color: var(--accent-color);
+}
+
+a:visited {
+    color: var(--accent-color);
+}
+
+header {
+    background-color: var(--main-background);
+    border-bottom: var(--light-gray) solid 1px;
+    height: 40px;
+    width: calc(100vw - 45px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+header>button {
+    /* select all children */
+    float: right;
+    margin: 0 0 0 10px;
+    padding: 10.5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+header>button>img {
+    height: 15px;
+    width: 15px;
+}
+
+button {
+    background: transparent;
+    border: transparent solid 2px;
+    outline: none;
+    color: var(--button-color);
+    cursor: pointer;
+}
+
+button:hover, .session-title:hover {
+    background: var(--hover);
+}
+
+button:active {
+    background: var(--gray);
+}
+
+button:focus {
+    border: var(--light-gray) solid 2px;
+}
+
+.modal {
+    border-radius: 10px;
+}
+
+button.accent {
+    color: var(--accent-color);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+}
+
+button.accent:hover {
+    background: var(--accent-hover) !important;
+}
+
+button.accent:active {
+    background: var(--accent-active) !important;
+}
+
+button.accent:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+button.accent:focus {
+    border: var(--accent-color) solid 2px !important;
+}
+
+/* modal */
+
+button.close {
+    border-radius: 50px;
+}
+
+button.close img {
+    display: block;
+}
+
+.modal button.close {
+    float: right;
+    padding: 8px;
+    height: 30px;
+    width: 30px;
+}
+
+.modal button.close img {
+    height: 10px;
+    width: 10px;
+}
+
+.modal {
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    padding: 10px;
+    margin-left: -160px;
+    box-shadow: var(--shadow);
+    background: var(--main-background);
+    visibility: hidden;
+}
+
+.confirm-modal-container>* {
+    z-index: 2;
+}
+
+.create-modal-container>* {
+    z-index: 2;
+}
+
+.background {
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: hsla(206, 20%, 5%, 0.3);
+    visibility: hidden;
+}
+
+/* confirmation modal */
+
+.modal-button-container {
+    margin: 10px auto 0 auto;
+}
+
+button.no {
+    margin-right: 10px;
+}
+
+button.done-create {
+    padding: 10px 20px 10px 20px;
+}
+
+button.yes, button.no {
+    padding: 10px 5px 10px 5px;
+    float: right;
+    /* border: 1px solid var(--gray);  */
+    border-radius: 10px;
+}
+
+.message {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.confirm-modal {
+    padding: 10px;
+    width: 200px;
+    margin: -42px 0 0 -111px;
+}
+
+.update-modal {
+    margin-top: -150px;
+}
+
+.hidden {
+    display: hidden;
+}
+
+/* animations */
+
+/* animation classes */
+
+.fade-out {
+    animation: fade-out 0.1s ease-out;
+}
+
+.fade-in {
+    animation: fade-in 0.1s ease-out;
+}
+
+.zoom-in {
+    animation: zoom-in 0.1s ease-out;
+}
+
+.zoom-out {
+    animation: zoom-out 0.1s ease-out;
+}
+
+.fade-out, .fade-in, .zoom-in, .zoom-out {
+    animation-fill-mode: forwards;
+}
+
+/* anim keyframes */
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.97);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.97);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+}
