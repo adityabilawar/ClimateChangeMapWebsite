@@ -5,3 +5,5 @@
 
 ## Development:
 `npm run serve`
+
+## API Key
