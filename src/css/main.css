@@ -24,3 +24,11 @@ overflow: auto;
 background-color: rgba(0,0,0,0.5);
 
 }
+
+
+.modal-content{
+background-color:whitesmoke;
+margin: 20% auto;
+padding:20px;
+width:70%;
+}
