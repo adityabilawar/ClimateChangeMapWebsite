@@ -55,45 +55,6 @@ export class Modal {
             this.DOMremove();
         }.bind(this), 100);
     }
-
-    form(){
-        this.hide();
-        //hide until button is clicked
-        //if button is clicked
-        //this.show();
-        
-
-    }
-}
-
-export class UpdateModal extends Modal {
-    yesButton
-    constructor(m) {
-        super('update', null);
-        var frag = document.createDocumentFragment();
-
-        var message = createElement('div', m, 'message');
-        frag.appendChild(message);
-
-        var buttonContainer = createElement('div', '', 'modal-button-container');
-        frag.appendChild(buttonContainer);
-
-        this.yesButton = createElement('button', "Got it!", 'yes');
-        buttonContainer.appendChild(this.yesButton);
-        this.yesButton.addEventListener('click', this.hideRemove.bind(this));
-
-        super.addContent(frag);
-        super.append();
-    }
-    hideRemove() {
-        super.hideRemove();
-        chrome.storage.local.set({ 'updateModal': false })
-    }
-    show() {
-        super.append();
-        super.show();
-    }
-
 }
 
 export class ConfirmModal extends Modal {
