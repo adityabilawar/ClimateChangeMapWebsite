@@ -55,6 +55,15 @@ export class Modal {
             this.DOMremove();
         }.bind(this), 100);
     }
+
+    form(){
+        this.hide();
+        //hide until button is clicked
+        //if button is clicked
+        //this.show();
+        
+
+    }
 }
 
 export class UpdateModal extends Modal {
@@ -84,6 +93,7 @@ export class UpdateModal extends Modal {
         super.append();
         super.show();
     }
+
 }
 
 export class ConfirmModal extends Modal {
