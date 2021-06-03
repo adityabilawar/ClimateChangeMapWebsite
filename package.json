@@ -17,7 +17,9 @@
     "url": "https://github.com/adityabilawar/ClimateChangeMapWebsite/issues"
   },
   "homepage": "https://github.com/adityabilawar/ClimateChangeMapWebsite#readme",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
   "devDependencies": {
     "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.38.1",
