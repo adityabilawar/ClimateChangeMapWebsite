@@ -6,7 +6,7 @@ export default form = (() => {
     function init() {
         const addButton = document.getElementById('add');
         addButton.addEventListener('click', () => {
-            const modal = new ConfirmModal('This button adds a modal', 'Got it!', 'go away--i don\'t like this');
+            const modal = new form('Form', 'button1', 'button2');
             modal.show();
         });
     }

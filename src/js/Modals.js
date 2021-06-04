@@ -58,7 +58,7 @@ export class Modal {
     
 }
 
-export class Form extends Modal {
+export class form extends Modal {
     yesButton
     noButton
     constructor(m, yes, no) {
