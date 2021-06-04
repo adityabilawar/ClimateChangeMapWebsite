@@ -56,10 +56,11 @@ export class Modal {
         }.bind(this), 100);
     }
     form() {
-        //lol not sure it this works - aditya
+        //lol not sure if this works - aditya
         this.hide();
         if(yesButton){
             this.show();
+            this.animate(this.background, 'fade-in');
         }
     }
 }
