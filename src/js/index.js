@@ -1,11 +1,7 @@
 import '../css/main.css';
-import { ConfirmModal } from './Modals.js';
 import Map from './Map';
+import form from './form';
 
-const map = new Map({ lat: 41.90476224706472, lng: 12.49822074385094 }, 14);
+const map = new Map({ lat: 40.305778369969865, lng: -74.61991279202903 }, 14);
 
-const addButton = document.getElementById('add');
-addButton.addEventListener('click', () => {
-    const modal = new ConfirmModal('This button adds a modal', 'Got it!', 'I don\'t like this');
-    modal.show();
-})
+form.init();
