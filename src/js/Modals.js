@@ -55,6 +55,47 @@ export class Modal {
             this.DOMremove();
         }.bind(this), 100);
     }
+    
+}
+
+export class Form extends Modal {
+    yesButton
+    noButton
+    constructor(m, yes, no) {
+        super('confirm', null);
+        var frag = document.createDocumentFragment();
+
+        var message = createElement('div', m, 'message');
+        frag.appendChild(message);
+
+        var buttonContainer = createElement('div', '', 'modal-button-container');
+        frag.appendChild(buttonContainer);
+
+        this.yesButton = createElement('button', yes, 'yes');
+        buttonContainer.appendChild(this.yesButton);
+
+        this.noButton = createElement('button', no, 'no');
+        buttonContainer.appendChild(this.noButton);
+
+        super.addContent(frag);
+        super.append();
+    }
+    show() {
+        super.show();
+        return new Promise((resolve) => {
+            this.yesButton.addEventListener('click', this.yes.bind(this, resolve));
+            this.noButton.addEventListener('click', this.no.bind(this, resolve));
+        });
+    }
+    yes(resolve) {
+        resolve(true);
+        this.hideRemove();
+    }
+    no(resolve) {
+        resolve(false);
+        this.hideRemove();
+    }
+
     form() {
         //lol not sure if this works - aditya
         this.hide();
@@ -64,7 +105,12 @@ export class Modal {
             this.animate(this.modal, 'zoom-in');
         }
     }
+
+
+
+
 }
+
 
 export class ConfirmModal extends Modal {
     yesButton
