@@ -1,7 +1,7 @@
 import { Loader } from "@googlemaps/js-api-loader";
 
 
-export class Map {
+export default class Map {
     map;
     constructor(center, zoom) {
         const loader = new Loader({
@@ -9,10 +9,8 @@ export class Map {
             version: "weekly",
         });
 
-        console.log('hi');
-
         loader.load().then(() => {
-            map = new google.maps.Map(document.getElementById("map"), {
+            this.map = new google.maps.Map(document.getElementById("map"), {
                 center,
                 zoom,
             });
