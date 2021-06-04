@@ -61,6 +61,7 @@ export class Modal {
         if(yesButton){
             this.show();
             this.animate(this.background, 'fade-in');
+            this.animate(this.modal, 'zoom-in');
         }
     }
 }
