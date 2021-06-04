@@ -10,9 +10,10 @@ const loader = new Loader({
     apiKey: "AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I",
     version: "weekly",
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("wrapper");
-    wrapper.style.backgroundImage = `url(${url}?center=${center.lat},${center.lng}&zoom=${zoom}&scale=2&size=${wrapper.clientWidth}x${wrapper.clientHeight}&key=AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I`;
+    // wrapper.style.backgroundImage = `url(${url}?center=${center.lat},${center.lng}&zoom=${zoom}&scale=2&size=${wrapper.clientWidth}x${wrapper.clientHeight}&key=AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I)`;
     wrapper.addEventListener("click", () => {
         wrapper.remove();
         loader.load().then(() => {
@@ -24,12 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 const addButton = document.getElementById('add');
 addButton.addEventListener('click', () => {
     const modal = new ConfirmModal('test');
     modal.show();
 })
-
-
-// window.initMap = initMap;
