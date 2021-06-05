@@ -20,10 +20,8 @@ class MarkerService {
         })
     }
 
-    static insertMarker(text) {
-        return axios.post(url, {
-            text
-        });
+    static insertMarker(data) {
+        return axios.post(url, data);
     }
 
     static deleteMarker(id) {
