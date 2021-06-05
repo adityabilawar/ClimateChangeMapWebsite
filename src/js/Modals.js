@@ -79,6 +79,7 @@ export class FormModal extends Modal {
 
         super.addContent(frag);
         super.append();
+      
     }
     show() {
         super.show();
