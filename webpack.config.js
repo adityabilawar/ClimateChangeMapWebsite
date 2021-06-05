@@ -33,13 +33,3 @@ module.exports = {
 };
 
 
-// maps api key
-const webpack = require("webpack");
-
-module.exports = () => ({
-  plugins: [
-    new webpack.DefinePlugin({
-      "process.env.MY_VALUE": JSON.stringify("AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I")
-    })
-  ]
-});
