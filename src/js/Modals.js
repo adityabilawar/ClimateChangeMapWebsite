@@ -121,7 +121,8 @@ export class FormModal extends Modal {
         event.preventDefault();
         const data = Object.fromEntries(new FormData(this.form).entries());
         //parse object over here
-        MarkerService.insertMarker(data);
+        const obj = JSON.parse(data);
+        MarkerService.insertMarker(obj);
         this.hideRemove();
     }
 }
