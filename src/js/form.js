@@ -10,7 +10,7 @@ export default form = (() => {
             modal.show();
         });
     }
-
+    
     return {
         init: init
     }
