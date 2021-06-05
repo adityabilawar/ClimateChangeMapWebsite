@@ -73,12 +73,14 @@ export class FormModal extends Modal {
         this.form.appendChild(message);
 
         createInput('Name', this.form);
+        const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
+        createOptions(options, this.form);
         createInput('Longitude', this.form);
         createInput('Latitude', this.form);
         createInput('Description of Location', this.form);
+        createInput('Image URL of location', this.form)
         
-        const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
-        createOptions(options, this.form);
+        
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
         this.form.appendChild(buttonContainer);
@@ -118,6 +120,7 @@ export class FormModal extends Modal {
     submit(event) {
         event.preventDefault();
         const data = Object.fromEntries(new FormData(this.form).entries());
+        //parse object over here
         MarkerService.insertMarker(data);
         this.hideRemove();
     }
