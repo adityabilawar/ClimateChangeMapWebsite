@@ -76,8 +76,8 @@ export class FormModal extends Modal {
         createInput('Longitude', this.form);
         createInput('Latitude', this.form);
         createInput('Description of Location', this.form);
-
-        const options = ['Aditya', 'alex', 'anish', 'sweden'];
+        
+        const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
         createOptions(options, this.form);
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
