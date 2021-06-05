@@ -98,12 +98,11 @@ export class form extends Modal {
 
     form() {
         //lol not sure if this works - aditya
-        this.hide();
-        if(yesButton){
+       
             this.show();
             this.animate(this.background, 'fade-in');
             this.animate(this.modal, 'zoom-in');
-        }
+        
     }
 
 
