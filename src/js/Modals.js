@@ -1,4 +1,5 @@
 import createElement from './ElementCreation.js';
+import MarkerService from './MarkerService';
 //FIXME: element.animate()?
 export class Modal {
     modal;
@@ -59,33 +60,37 @@ export class Modal {
 }
 
 export class FormModal extends Modal {
-    submitButton
+    form
     constructor() {
         super('form');
 
         let frag = document.createDocumentFragment();
 
+        this.form = document.createElement('form');
+        frag.append(this.form);
+
         const message = createElement('div', 'Submit climate change data', 'title');
-        frag.appendChild(message);
+        this.form.appendChild(message);
 
-        createInput('Name');
-        createInput('Longitude');
-        createInput('Latitude');
-        createInput('Description of Location');
+        createInput('Name', this.form);
+        createInput('Longitude', this.form);
+        createInput('Latitude', this.form);
+        createInput('Description of Location', this.form);
 
-        const options = ['Aditya', 'alex', 'anish', 'sweden']
-        createOptions(options);
+        const options = ['Aditya', 'alex', 'anish', 'sweden'];
+        createOptions(options, this.form);
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
-        frag.appendChild(buttonContainer);
+        this.form.appendChild(buttonContainer);
 
-        this.submitButton = createElement('button', 'Submit', 'form-submit');
-        buttonContainer.appendChild(this.submitButton);
+        this.submitButton = createElement('input', 'Submit', 'form-submit');
+        this.submitButton.type = 'submit';
+        this.form.appendChild(this.submitButton);
 
         super.addContent(frag);
         super.append();
 
-        function createOptions(options) {
+        function createOptions(options, form) {
             let typeInput = createElement('select', '', 'form-type');
             typeInput.name = 'type';
 
@@ -95,24 +100,27 @@ export class FormModal extends Modal {
                 typeInput.appendChild(ele);
             });
 
-            frag.appendChild(typeInput);
+            form.appendChild(typeInput);
         }
 
-        function createInput(placeholder) {
+        function createInput(placeholder, form) {
             let input = createElement('Input', '', 'form');
             input.type = 'text';
             input.placeholder = placeholder;
-            frag.appendChild(input);
+            form.appendChild(input);
         }
     }
     show() {
         super.show();
-        return new Promise((resolve) => {
-            this.submitButton.addEventListener('click', this.submit.bind(this, resolve));
-        });
+        console.log(this.form);
+        this.form.addEventListener('submit', this.submit.bind(this));
     }
-    submit(resolve) {
-        resolve(true);
+    submit(event) {
+        event.preventDefault();
+
+        const data = Object.fromEntries(new FormData(this.form).entries());
+        MarkerService.insertMarker(data);
+
         this.hideRemove();
     }
 }
