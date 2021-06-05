@@ -106,21 +106,19 @@ export class FormModal extends Modal {
         function createInput(placeholder, form) {
             let input = createElement('Input', '', 'form');
             input.type = 'text';
+            input.name = placeholder;
             input.placeholder = placeholder;
             form.appendChild(input);
         }
     }
     show() {
         super.show();
-        console.log(this.form);
         this.form.addEventListener('submit', this.submit.bind(this));
     }
     submit(event) {
         event.preventDefault();
-
         const data = Object.fromEntries(new FormData(this.form).entries());
         MarkerService.insertMarker(data);
-
         this.hideRemove();
     }
 }
