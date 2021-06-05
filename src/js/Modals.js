@@ -58,7 +58,7 @@ export class Modal {
     
 }
 
-export class form extends Modal {
+export class FormModal extends Modal {
     yesButton
     noButton
     constructor(m, yes, no) {
@@ -95,19 +95,6 @@ export class form extends Modal {
         resolve(false);
         this.hideRemove();
     }
-
-    form() {
-        //lol not sure if this works - aditya
-       
-         
-            this.animate(this.background, 'fade-in');
-            this.animate(this.modal, 'zoom-in');
-        
-    }
-
-
-
-
 }
 
 
