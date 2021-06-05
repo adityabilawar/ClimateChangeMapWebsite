@@ -3,16 +3,14 @@ import axios from 'axios';
 const url = '/api/marker/';
 
 class MarkerService {
-    // Get Posts
-    static getPosts() {
+    static getMarkers() {
         return new Promise((resolve, reject) => {
             try {
                 axios.get(url).then((res) => {
                     const data = res.data;
                     resolve(
-                        data.map(post => ({
-                            ...post,
-                            createdAt: new Date(post.createdAt)
+                        data.map(marker => ({
+                            ...marker,
                         }))
                     );
                 });
@@ -22,15 +20,13 @@ class MarkerService {
         })
     }
 
-    // Create Post
-    static insertPost(text) {
+    static insertMarker(text) {
         return axios.post(url, {
             text
         });
     }
 
-    //Delete Post
-    static deletePost(id) {
+    static deleteMarker(id) {
         return axios.delete(`${url}${id}`)
     }
 }
