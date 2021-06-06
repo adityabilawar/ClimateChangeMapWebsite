@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = '/api/marker/';
+const url = '/api/markers/';
 
 class MarkerService {
     static getMarkers() {
@@ -21,7 +21,12 @@ class MarkerService {
     }
 
     static insertMarker(data) {
-        return axios.post(url, data);
+        console.log(data);
+        return axios.post(url, {
+            coords: {
+                latitude: data.latitude
+            }
+        });
     }
 
     static deleteMarker(id) {
