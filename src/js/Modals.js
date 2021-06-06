@@ -119,8 +119,17 @@ export class FormModal extends Modal {
     }
     submit(event) {
         event.preventDefault();
-        const data = Object.fromEntries(new FormData(this.form).entries());
-        //parse object over here
+        const rawFormData = Object.fromEntries(new FormData(this.form).entries());
+
+        const data = {
+            coords: { 
+                latitude: rawFormData.Latitude,
+                longitude: rawFormData.Longitude
+            },
+            imageURL: rawFormData['image url'],
+            desc: rawFormData['Description of Location'],
+            event: rawFormData.type,
+        }
         
         MarkerService.insertMarker(data);
         this.hideRemove();
