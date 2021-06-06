@@ -121,7 +121,6 @@ export class FormModal extends Modal {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
 
-        //note to self: perhaps separate the names 
         const data = {
             coords: { 
                 latitude: rawFormData.lat,
