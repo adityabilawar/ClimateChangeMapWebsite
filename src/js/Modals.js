@@ -72,14 +72,14 @@ export class FormModal extends Modal {
         const message = createElement('div', 'Submit climate change data', 'title');
         this.form.appendChild(message);
 
-        createInput('Name', this.form);
+        //second arg is the key value in the eventual form object
+        createInput('Name', 'userName', this.form);
         const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
-        createOptions(options, this.form);
-        createInput('Longitude', this.form);
-        createInput('Latitude', this.form);
-        createInput('Description of Location', this.form);
-        createInput('Image URL of location', this.form)
-        
+        createOptions(options, 'type', this.form);
+        createInput('Longitude', 'long', this.form);
+        createInput('Latitude', 'lat', this.form);
+        createInput('Description of Location', 'desc', this.form);
+        createInput('Image URL of location', 'imageURL', this.form)
         
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
@@ -92,9 +92,9 @@ export class FormModal extends Modal {
         super.addContent(frag);
         super.append();
 
-        function createOptions(options, form) {
+        function createOptions(options, type, form) {
             let typeInput = createElement('select', '', 'form-type');
-            typeInput.name = 'type';
+            typeInput.name = type;
 
             options.forEach(option => {
                 let ele = createElement('option', option, 'form-type');
@@ -105,10 +105,10 @@ export class FormModal extends Modal {
             form.appendChild(typeInput);
         }
 
-        function createInput(placeholder, form) {
+        function createInput(placeholder, key, form) {
             let input = createElement('Input', '', 'form');
             input.type = 'text';
-            input.name = placeholder;
+            input.name = key;
             input.placeholder = placeholder;
             form.appendChild(input);
         }
@@ -121,13 +121,14 @@ export class FormModal extends Modal {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
 
+        //note to self: perhaps separate the names 
         const data = {
             coords: { 
-                latitude: rawFormData.Latitude,
-                longitude: rawFormData.Longitude
+                latitude: rawFormData.lat,
+                longitude: rawFormData.long
             },
-            imageURL: rawFormData['image url'],
-            desc: rawFormData['Description of Location'],
+            imageURL: rawFormData.imageURL,
+            desc: rawFormData.desc,
             event: rawFormData.type,
         }
         
