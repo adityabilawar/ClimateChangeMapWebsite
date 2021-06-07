@@ -17,51 +17,52 @@ export default class Map {
             });
         });
 
-       
-          //Array of markers
-    var markers = MarkerService.getMarkers();
-      
-    //loop through markers
-    for (var i = 0; i < markers.length; i++) {
-        //add marker
-        addMarker(markers[i]);
+        this.refreshMarkers();
     }
 
-    //add Marker Function 
-    function addMarker(props) {
-        const marker = new google.maps.Marker({
-            position: props.coords,
-            map: map,
-            //icon: props.iconImage
-        });
+    async refreshMarkers() {
+        //Array of markers
+        const markers = await MarkerService.getMarkers();
 
-        //check for custom icon
-        if (props.iconImage) {
-            //set icon image
-            marker.setIcon(props.iconImage);
+        console.log(markers);
+        //loop through markers
+        for (var i = 0; i < markers.length; i++) {
+            //add marker
+            addMarker(markers[i]);
         }
 
-        //check content(this has the location description)
-        if (props.content) {
-            const infowindow = new google.maps.InfoWindow({
-                content: props.content
-            });
-        if(props.desc){
-            const infowindow = new google.maps.InfoWindow({
-                content: props.desc
+        //add Marker Function 
+        function addMarker(props) {
+            const marker = new google.maps.Marker({
+                position: props.coords,
+                map: map,
+                //icon: props.iconImage
             });
 
+            //check for custom icon
+            if (props.iconImage) {
+                //set icon image
+                marker.setIcon(props.iconImage);
+            }
+
+            //check content(this has the location description)
+            if (props.content) {
+                const infowindow = new google.maps.InfoWindow({
+                    content: props.content
+                });
+                if (props.desc) {
+                    const infowindow = new google.maps.InfoWindow({
+                        content: props.desc
+                    });
+
+                }
+                marker.addListener('click', function () {
+                    //fix this, this zooms and centers onto location clicked
+                    //map.setZoom(8);
+                    //map.setCenter(marker.getPosition() as google.maps.LatLng);
+                    infowindow.open(map, marker);
+                });
+            }
         }
-            marker.addListener('click', function () {
-                //fix this, this zooms and centers onto location clicked
-                //map.setZoom(8);
-                //map.setCenter(marker.getPosition() as google.maps.LatLng);
-                infowindow.open(map, marker);
-            });
-        }
-    }
-
-
-
     }
 }
