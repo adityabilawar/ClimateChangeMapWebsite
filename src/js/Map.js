@@ -17,11 +17,11 @@ export default class Map {
             });
         });
 
-        MarkerService.getMarkers();
+       
           //Array of markers
     var markers = [
         {
-            
+            MarkerService,getMarkers()
         }
         //example marker
         //In this array we will put transfer the file link/json/csv data and make sure it is in an array form
