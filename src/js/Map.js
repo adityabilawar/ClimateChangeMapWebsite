@@ -19,23 +19,8 @@ export default class Map {
 
        
           //Array of markers
-    var markers = [
-        {
-            MarkerService,getMarkers()
-        }
-        //example marker
-        //In this array we will put transfer the file link/json/csv data and make sure it is in an array form
-        //add new marker to array {}
-        /* 
-        {
-        coords:
-        icon image:
-        content:
-        
-        
-        }
-        */
-    ]
+    var markers = MarkerService.getMarkers();
+      
     //loop through markers
     for (var i = 0; i < markers.length; i++) {
         //add marker
@@ -61,7 +46,12 @@ export default class Map {
             const infowindow = new google.maps.InfoWindow({
                 content: props.content
             });
+        if(props.desc){
+            const infowindow = new google.maps.InfoWindow({
+                content: props.desc
+            });
 
+        }
             marker.addListener('click', function () {
                 //fix this, this zooms and centers onto location clicked
                 //map.setZoom(8);
