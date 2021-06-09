@@ -35,7 +35,7 @@ export default class Map {
         function addMarker(props) {
             const marker = new google.maps.Marker({
                 position: props.coords,
-                map: map,
+                map: this.map,
                 //icon: props.iconImage
             });
 
