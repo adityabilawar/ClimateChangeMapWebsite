@@ -129,10 +129,12 @@ export class FormModal extends Modal {
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
+            
         }
         
         MarkerService.insertMarker(data);
         this.hideRemove();
+        map.refreshMarkers();
     }
 }
 
