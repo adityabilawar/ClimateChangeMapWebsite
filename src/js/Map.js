@@ -23,13 +23,13 @@ export default class Map {
     async refreshMarkers() {
         //Array of markers
         const markers = await MarkerService.getMarkers();
-
+        addMarker(markers);
         console.log(markers);
         //loop through markers
-        for (var i = 0; i < markers.length; i++) {
+       // for (var i = 0; i < markers.length; i++) {
             //add marker
-            addMarker(markers[i]);
-        }
+           // addMarker(markers[i]);
+     //   }
 
         //add Marker Function 
         function addMarker(props) {
