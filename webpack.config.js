@@ -23,10 +23,10 @@ module.exports = {
     ],
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../server/dist'),
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, '../server/dist'),
         port: 8000,
         open: true,
     }
