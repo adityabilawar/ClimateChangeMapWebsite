@@ -7,7 +7,7 @@
     "serve": "./node_modules/.bin/webpack serve --mode development",
     "prod": "./node_modules/.bin/webpack --mode production",
     "build": "./node_modules/.bin/webpack build --mode production",
-    "heroku-postbuild": "./node_modules/.bin/webpack-p --config ./webpack.prod.config.js --progress"
+    "heroku-postbuild": "./node_modules/.bin/webpack --mode production"
   },
   "repository": {
     "type": "git",
