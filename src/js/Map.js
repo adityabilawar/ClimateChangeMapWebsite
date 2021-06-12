@@ -28,10 +28,11 @@ export default class Map {
         console.log(this);
         //Array of markers
         const markers = await MarkerService.getMarkers();
-
+        //run this if for loop not working
+       // addMarker(markers);
         console.log(markers);
         //loop through markers
-        for (var i = 0; i < markers.length; i++) {
+       for (var i = 0; i < markers.length; i++) {
             //add marker
             addMarker(markers[i]);
         }
@@ -40,7 +41,7 @@ export default class Map {
         function addMarker(props) {
             const marker = new google.maps.Marker({
                 position: props.coords,
-                map: this.map,
+                map: map,
                 //icon: props.iconImage
             });
 
