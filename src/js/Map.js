@@ -20,7 +20,12 @@ export default class Map {
         this.refreshMarkers();
     }
 
+    get map() {
+        return this.map;
+    }    
+
     async refreshMarkers() {
+        console.log(this);
         //Array of markers
         const markers = await MarkerService.getMarkers();
 

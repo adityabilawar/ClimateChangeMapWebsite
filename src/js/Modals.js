@@ -115,9 +115,11 @@ export class FormModal extends Modal {
     }
     show() {
         super.show();
-        this.form.addEventListener('submit', this.submit.bind(this));
+        return new Promise((resolve) => {
+            this.form.addEventListener('submit', this.submit.bind(this, resolve));
+        });
     }
-    submit(event) {
+    submit(event, resolve) {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
 
@@ -134,7 +136,8 @@ export class FormModal extends Modal {
         
         MarkerService.insertMarker(data);
         this.hideRemove();
-        map.refreshMarkers();
+
+        resolve(true);
     }
 }
 
