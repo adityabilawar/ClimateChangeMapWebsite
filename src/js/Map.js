@@ -35,7 +35,7 @@ export default class Map {
         function addMarker(props) {
             const marker = new google.maps.Marker({
                 position: props.coords,
-                map: map,
+                map: this.map,
                 //icon: props.iconImage
             });
 
@@ -46,16 +46,17 @@ export default class Map {
             }
 
             //check content(this has the location description)
-            if (props.content) {
-                const infowindow = new google.maps.InfoWindow({
-                    content: props.content
-                });
-                if (props.desc) {
+            //use this in the future( to add the name of the location along with the creator name and the location image)
+            //if (props.content) {
+               // const infowindow = new google.maps.InfoWindow({
+                   // content: props.content
+              //  }); 
+               if (props.desc) {
                     const infowindow = new google.maps.InfoWindow({
-                        content: props.desc
+                       content: props.desc
                     });
 
-                }
+               
                 marker.addListener('click', function () {
                     //fix this, this zooms and centers onto location clicked
                     //map.setZoom(8);
