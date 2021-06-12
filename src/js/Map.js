@@ -20,12 +20,7 @@ export default class Map {
         this.refreshMarkers();
     }
 
-    get map() {
-        return this.map;
-    }    
-
     async refreshMarkers() {
-        console.log(this);
         //Array of markers
         const markers = await MarkerService.getMarkers();
         //run this if for loop not working
@@ -34,14 +29,15 @@ export default class Map {
         //loop through markers
        for (var i = 0; i < markers.length; i++) {
             //add marker
-            addMarker(markers[i]);
+            addMarker.bind(this, markers[i])();
         }
 
         //add Marker Function 
         function addMarker(props) {
+            console.log(this);
             const marker = new google.maps.Marker({
                 position: props.coords,
-                map: map,
+                map: this.map,
                 //icon: props.iconImage
             });
 
