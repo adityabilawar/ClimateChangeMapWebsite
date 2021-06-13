@@ -38,7 +38,7 @@ export default class Map {
             console.log(this);
             const marker = new google.maps.Marker({
                
-                position: props.parseInt(coords),
+                position: props.coords,
                 map: map,
                 //icon: props.iconImage
             });

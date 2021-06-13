@@ -127,8 +127,7 @@ export class FormModal extends Modal {
 
         const data = {
             coords: {
-                latitude: rawFormData.lat,
-                longitude: rawFormData.long
+                coords:{lat:rawFormData.lat,lng:rawFormData.long}
             },
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
