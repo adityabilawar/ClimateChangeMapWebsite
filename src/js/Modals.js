@@ -73,7 +73,7 @@ export class FormModal extends Modal {
         this.form.appendChild(message);
 
         //second arg is the key value in the eventual form object
-        createInput('Location Name', 'userName', this.form);
+        createInput('Location Name', 'LocName', this.form);
         const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
         createOptions(options, 'type', this.form);
         createInput('Longitude', 'long', this.form);
@@ -129,6 +129,7 @@ export class FormModal extends Modal {
             coords: {
                lat:rawFormData.lati,lng:rawFormData.long
             },
+            LocationName: rawFormData.LocName,
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
