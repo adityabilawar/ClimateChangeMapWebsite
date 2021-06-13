@@ -39,7 +39,7 @@ export default class Map {
                
                 position: props.coords,
                 map: map,
-                //icon: props.iconImage
+                icon: props.iconImage
             });
 
             //check for custom icon

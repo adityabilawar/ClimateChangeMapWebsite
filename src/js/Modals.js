@@ -133,6 +133,7 @@ export class FormModal extends Modal {
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
+            iconImage:"https://www.pngitem.com/pimgs/m/676-6763048_google-maps-icon-plus-drive-play-png-and.png"
 
         }
 
