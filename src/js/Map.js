@@ -39,7 +39,7 @@ export default class Map {
                
                 position: props.coords,
                 map: map,
-                icon: props.iconImage
+                icon: "https://www.pngitem.com/pimgs/m/676-6763048_google-maps-icon-plus-drive-play-png-and.png"
             });
 
             //check for custom icon
