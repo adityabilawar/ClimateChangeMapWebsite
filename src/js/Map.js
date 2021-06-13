@@ -23,7 +23,7 @@ export default class Map {
     async refreshMarkers() {
         //Array of markers
         const markers = await MarkerService.getMarkers();
-        //run this if for loop not working
+        
        // addMarker(markers);
         console.log(markers);
         //loop through markers
@@ -31,7 +31,6 @@ export default class Map {
             //add marker
             addMarker.bind(this, markers[i])();
         }
-        //checking if this works(have to parse coordinates to string values)
         
         //add Marker Function 
         function addMarker(props) {
