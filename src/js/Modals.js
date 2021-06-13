@@ -77,7 +77,7 @@ export class FormModal extends Modal {
         const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
         createOptions(options, 'type', this.form);
         createInput('Longitude', 'long', this.form);
-        createInput('Latitude', 'lat', this.form);
+        createInput('Latitude', 'lati', this.form);
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form)
 
@@ -127,7 +127,7 @@ export class FormModal extends Modal {
 
         const data = {
             coords: {
-               lat:rawFormData.lat,lng:rawFormData.long
+               lat:rawFormData.lati,lng:rawFormData.long
             },
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
