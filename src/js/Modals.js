@@ -73,7 +73,7 @@ export class FormModal extends Modal {
         this.form.appendChild(message);
 
         //second arg is the key value in the eventual form object
-        createInput('Name', 'userName', this.form);
+        createInput('Location Name', 'userName', this.form);
         const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
         createOptions(options, 'type', this.form);
         createInput('Longitude', 'long', this.form);

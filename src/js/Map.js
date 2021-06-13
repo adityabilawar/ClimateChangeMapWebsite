@@ -31,13 +31,15 @@ export default class Map {
             //add marker
             addMarker.bind(this, markers[i])();
         }
-
+        //checking if this works(have to parse coordinates to string values)
+        
         //add Marker Function 
         function addMarker(props) {
             console.log(this);
             const marker = new google.maps.Marker({
-                position: props.coords,
-                map: this.map,
+               
+                position: props.parseInt(coords),
+                map: map,
                 //icon: props.iconImage
             });
 
