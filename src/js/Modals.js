@@ -80,7 +80,7 @@ export class FormModal extends Modal {
         createInput('Latitude', 'lat', this.form);
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form)
-        
+
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
         this.form.appendChild(buttonContainer);
@@ -116,24 +116,26 @@ export class FormModal extends Modal {
     show() {
         super.show();
         return new Promise((resolve) => {
-            this.form.addEventListener('submit', this.submit.bind(this, resolve));
+            this.form.addEventListener('submit', (e) => {
+                this.submit(e, resolve);
+            });
         });
     }
-    submit(event, resolve) {
+    submit = (event, resolve) => {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
 
         const data = {
-            coords: { 
+            coords: {
                 latitude: rawFormData.lat,
                 longitude: rawFormData.long
             },
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            
+
         }
-        
+
         MarkerService.insertMarker(data);
         this.hideRemove();
 
