@@ -12,8 +12,9 @@ export default class Map {
 
         loader.load().then(() => {
             this.map = new google.maps.Map(document.getElementById("map"), {
-                center,
-                zoom,
+                //check if this works
+                center:{lat:0,lng:0},
+                zoom:8,
             });
         });
 
