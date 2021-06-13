@@ -13,8 +13,8 @@ export default class Map {
         loader.load().then(() => {
             this.map = new google.maps.Map(document.getElementById("map"), {
                 //check if this works
-                center:{lat:0,lng:0},
-                zoom:8,
+                center: center,
+                zoom: zoom,
             });
         });
 
@@ -24,39 +24,37 @@ export default class Map {
     async refreshMarkers() {
         //Array of markers
         const markers = await MarkerService.getMarkers();
-        
-       // addMarker(markers);
+
+        // addMarker(markers);
         console.log(markers);
         //loop through markers
-       for (var i = 0; i < markers.length; i++) {
+        for (var i = 0; i < markers.length; i++) {
             //add marker
             addMarker.bind(this, markers[i])();
         }
-        
+
         //add Marker Function 
         function addMarker(props) {
-            console.log(this);
             const marker = new google.maps.Marker({
-               
                 position: props.coords,
-                map: map,
-               icon: props.iconImage
+                map: this.map,
+                icon: props.iconImage
             });
 
-           
+
 
             //check content(this has the location description)
             //use this in the future( to add the name of the location along with the creator name and the location image)
             //if (props.content) {
-               // const infowindow = new google.maps.InfoWindow({
-                   // content: props.content
-              //  }); 
-               if (props.desc) {
-                    const infowindow = new google.maps.InfoWindow({
-                       content: props.desc
-                    });
+            // const infowindow = new google.maps.InfoWindow({
+            // content: props.content
+            //  }); 
+            if (props.desc) {
+                const infowindow = new google.maps.InfoWindow({
+                    content: props.desc
+                });
 
-               
+
                 marker.addListener('click', function () {
                     //fix this, this zooms and centers onto location clicked
                     //map.setZoom(8);
