@@ -39,14 +39,10 @@ export default class Map {
                
                 position: props.coords,
                 map: map,
-               
+               icon: props.iconImage
             });
 
-            //check for custom icon
-            if (props.iconImage) {
-                //set icon image
-                marker.setIcon(props.iconImage);
-            }
+           
 
             //check content(this has the location description)
             //use this in the future( to add the name of the location along with the creator name and the location image)
