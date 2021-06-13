@@ -36,11 +36,13 @@ export default class Map {
             //add marker
             addMarker(markers[i]);
         }
-
+        //checking if this works(have to parse coordinates to string values)
+        var coordinatesparse = parseInt(coords);
         //add Marker Function 
         function addMarker(props) {
             const marker = new google.maps.Marker({
-                position: props.coords,
+                
+                position: props.coordinatesparse,
                 map: map,
                 //icon: props.iconImage
             });
