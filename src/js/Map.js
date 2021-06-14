@@ -44,22 +44,22 @@ export default class Map {
             });
 
             if(props.iconImage){
-                if(eventType.equals("Wildfire"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/firedept.png");
-                if(eventType.equals("Sinking Island"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/marina.png");
-                if(eventType.equals("Melting Glacier"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
-                if(eventType.equals("Drought"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/orange-dot.png");
-                if(eventType.equals("Flood"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/flag.png");
-                if(eventType.equals("Hurricane"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/pink-dot.png");
-                if(eventType.equals("Earthquake"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
-                if(eventType.equals("Tsunami"))
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/waterfalls.png");
+                if(eventType.equals("Wildfire")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/firedept.png");}
+                if(eventType.equals("Sinking Island")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/marina.png");}
+                if(eventType.equals("Melting Glacier")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");}
+                if(eventType.equals("Drought")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/orange-dot.png");}
+                if(eventType.equals("Flood")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/flag.png");}
+                if(eventType.equals("Hurricane")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/pink-dot.png");}
+                if(eventType.equals("Earthquake")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");}
+                if(eventType.equals("Tsunami")){
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/waterfalls.png");}
 
             }
            
