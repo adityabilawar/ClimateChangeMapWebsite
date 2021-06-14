@@ -45,7 +45,7 @@ export default class Map {
             if(props.iconImage){
                 //set icon image
                // marker.setIcon(props.iconImage);
-               const imageURL1 = "";
+             /*  const imageURL1 = "";
                if(eventType === "Wildfire"){
                 imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";}
            else if(eventType === "SinkingIsland"){
@@ -62,7 +62,7 @@ export default class Map {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";}
             else if(eventType === "Tsunami"){
                 imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";}
-                marker.setIcon(imageURL1);
+                marker.setIcon(imageURL1); */
             }
            
 
