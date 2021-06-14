@@ -57,14 +57,14 @@ export default class Map {
             p.appendChild(pText);
             container.appendChild(p);
 
+            const img = document.createElement("img");
+            img.src = props.imageURL;
+            container.appendChild(img);
+
             const p1 = document.createElement("p");
             const pText1 = document.createTextNode("Contributer: "+ props.Username);
             p1.appendChild(pText1);
             container.appendChild(p1);
-
-            const img = document.createElement("img");
-            img.src = imageURL;
-            container.appendChild(img);
 
             if (props.content) {
                 const infowindow = new google.maps.InfoWindow({
