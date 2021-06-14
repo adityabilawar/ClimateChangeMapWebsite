@@ -44,7 +44,7 @@ export default class Map {
             });
 
             if(props.iconImage){
-                const eventTypeString = JSON.stringify(eventType);
+                const eventTypeString = JSON.stringify(this.eventType);
                 if(eventTypeString.equals("Wildfire")){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/firedept.png");}
                else if(eventTypeString.equals("Sinking Island")){
