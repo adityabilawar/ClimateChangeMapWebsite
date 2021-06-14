@@ -25,36 +25,48 @@ export default class Map {
         console.log('Refreshing markers...');
         //Array of markers
         const markers = await MarkerService.getMarkers();
-        
-       // addMarker(markers);
+
+        // addMarker(markers);
         console.log(markers);
         //loop through markers
-       for (var i = 0; i < markers.length; i++) {
+        for (var i = 0; i < markers.length; i++) {
             //add marker
             addMarker.bind(this, markers[i])();
         }
-        
+
         //add Marker Function 
         function addMarker(props) {
-            const marker = new google.maps.Marker({   
+
+            const marker = new google.maps.Marker({
                 position: props.coords,
                 map: this.map,
-               // icon: props.iconImage
+                // icon: props.iconImage
             });
-     
-          //  check content(this has the location description)
-           // use this in the future( to add the name of the location along with the creator name and the location image)
+
+            //  check content(this has the location description)
+            // use this in the future( to add the name of the location along with the creator name and the location image)
+            const container = document.createDocumentFragment();
+
+            const h1 = document.createElement("h1");
+            const h1Text = document.createTextNode("text");
+            h1.appendChild(h1Text);
+            container.appendChild(h1);
+
+            const img = document.createElement("img");
+            img.src = "stackhack101.herokuapp.com/anishjha";
+            container.appendChild(img);
+            
             if (props.content) {
-               const infowindow = new google.maps.InfoWindow({
-                   //format content
-                 content: props.content
-               }); 
-        
-               
-               marker.addListener('click', function () {
-                   // fix this, this zooms and centers onto location clicked
-                  //  map.setZoom(8);
-                  //  map.setCenter(marker.getPosition() as google.maps.LatLng);
+                const infowindow = new google.maps.InfoWindow({
+                    //format content
+                    content: container
+                });
+
+
+                marker.addListener('click', function () {
+                    // fix this, this zooms and centers onto location clicked
+                    //  map.setZoom(8);
+                    //  map.setCenter(marker.getPosition() as google.maps.LatLng);
                     infowindow.open(map, marker);
                 });
             }
