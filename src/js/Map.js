@@ -45,21 +45,21 @@ export default class Map {
 
             if(props.iconImage){
                 const eventTypeString = JSON.stringify(this.eventType);
-                if(eventTypeString.equals("Wildfire")){
+                if(eventTypeString === "Wildfire"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/firedept.png");}
-               else if(eventTypeString.equals("Sinking Island")){
+               else if(eventTypeString === "Sinking Island"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/marina.png");}
-               else if(eventTypeString.equals("Melting Glacier")){
+               else if(eventTypeString === "Melting Glacier"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");}
-                else if(eventTypeString.equals("Drought")){
+                else if(eventTypeString ===  "Drought"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/orange-dot.png");}
-               else if(eventTypeString.equals("Flood")){
+               else if(eventTypeString === "Flood"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/flag.png");}
-              else  if(eventTypeString.equals("Hurricane")){
+              else  if(eventTypeString ===  "Hurricane"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/pink-dot.png");}
-               else if(eventTypeString.equals("Earthquake")){
+               else if(eventTypeString === "Earthquake"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");}
-                else if(eventTypeString.equals("Tsunami")){
+                else if(eventTypeString === "Tsunami"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/waterfalls.png");}
 
             }
