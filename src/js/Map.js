@@ -72,7 +72,7 @@ export default class Map {
               //  }); 
                if (props.content) {
                     const infowindow = new google.maps.InfoWindow({
-                       content: props.content
+                       content:this.props.content
                     });
 
                
