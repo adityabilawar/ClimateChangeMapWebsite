@@ -4,7 +4,7 @@ import MarkerService from "./MarkerService";
 
 export default class Map {
     map;
-    constructor(center, zoom) {
+    constructor(center, zoom, maxZoom) {
         const loader = new Loader({
             apiKey: "AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I",
             version: "weekly",
@@ -15,6 +15,7 @@ export default class Map {
                 //check if this works
                 center,
                 zoom,
+                maxZoom
             });
         });
 
