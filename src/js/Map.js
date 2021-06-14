@@ -39,7 +39,7 @@ export default class Map {
             const marker = new google.maps.Marker({
                
                 position: props.coords,
-                map: map,
+                map: this.map,
                icon: props.iconImage
             });
 
