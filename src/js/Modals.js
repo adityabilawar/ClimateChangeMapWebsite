@@ -73,13 +73,16 @@ export class FormModal extends Modal {
         this.form.appendChild(message);
 
         //second arg is the key value in the eventual form object
+        createInput('Full Name', 'UserName', this.form);
         createInput('Location Name', 'LocName', this.form);
-        const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
+        const options = ['Wildfire', 'Rising Sea Levels', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami', 'Rising Temperatures', 'Rising Ocean Temperatures'];
         createOptions(options, 'type', this.form);
         createInput('Latitude', 'lati', this.form);
         createInput('Longitude', 'long', this.form);
         createInput('Description of Location', 'desc', this.form);
-        createInput('Image URL of location', 'imageURL', this.form)
+        createInput('Image URL of location', 'imageURL', this.form);
+        createInput('Year Of Event', 'EventDate', this.form);
+        
 
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
@@ -131,7 +134,7 @@ export class FormModal extends Modal {
         if (eventType === "Wildfire") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";
         }
-        else if (eventType === "SinkingIsland") {
+        else if (eventType === "RisingSeaLevels") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";
         }
         else if (eventType === "MeltingGlacier") {
@@ -152,15 +155,23 @@ export class FormModal extends Modal {
         else if (eventType === "Tsunami") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";
         }
+        else if (eventType === "RisingTemperatures") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/hotsprings.png";
+        }
+        else if (eventType === "RisingOceanTemperatures") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
+        }
         const data = {
             coords: {
                 lat: parseInt(rawFormData.lati), lng: parseInt(rawFormData.long)
             },
+            Username1: rawFormData.UserName,
             LocationName: rawFormData.LocName,
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage: imageURL1
+            iconImage: imageURL1,
+            DateOfEvent: rawFormData.EventDate
         }
 
         MarkerService.insertMarker(data);

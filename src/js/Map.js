@@ -55,7 +55,7 @@ export default class Map {
             const img = document.createElement("img");
             img.src = "stackhack101.herokuapp.com/anishjha";
             container.appendChild(img);
-            
+
             if (props.content) {
                 const infowindow = new google.maps.InfoWindow({
                     //format content
