@@ -40,9 +40,9 @@ export default class Map {
                
                 position: props.coords,
                 map: this.map,
-              // icon: props.iconImage
+                icon: props.iconImage
             });
-            if(props.iconImage){
+      //      if(props.iconImage){
                 //set icon image
                // marker.setIcon(props.iconImage);
              /*  const imageURL1 = "";
@@ -63,7 +63,7 @@ export default class Map {
             else if(eventType === "Tsunami"){
                 imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";}
                 marker.setIcon(imageURL1); */
-            }
+           // }
            
 
           //  check content(this has the location description)
