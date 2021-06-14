@@ -75,7 +75,7 @@ export class FormModal extends Modal {
         //second arg is the key value in the eventual form object
         createInput('Full Name', 'UserName', this.form);
         createInput('Location Name', 'LocName', this.form);
-        const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
+        const options = ['Wildfire', 'Rising Sea Levels', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
         createOptions(options, 'type', this.form);
         createInput('Latitude', 'lati', this.form);
         createInput('Longitude', 'long', this.form);
@@ -134,7 +134,7 @@ export class FormModal extends Modal {
         if (eventType === "Wildfire") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";
         }
-        else if (eventType === "SinkingIsland") {
+        else if (eventType === "RisingSeaLevels") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";
         }
         else if (eventType === "MeltingGlacier") {
