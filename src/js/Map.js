@@ -44,12 +44,13 @@ export default class Map {
             });
 
             if(props.iconImage){
-                const eventTypeString = JSON.stringify(this.eventType);
+                const eventTypeString1 = JSON.stringify(this.eventType);
+                const eventTypeString = eventTypeString1.split(' ').join('');
                 if(eventTypeString === "Wildfire"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/firedept.png");}
-               else if(eventTypeString === "Sinking Island"){
+               else if(eventTypeString === "SinkingIsland"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/marina.png");}
-               else if(eventTypeString === "Melting Glacier"){
+               else if(eventTypeString === "MeltingGlacier"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");}
                 else if(eventTypeString ===  "Drought"){
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/orange-dot.png");}
