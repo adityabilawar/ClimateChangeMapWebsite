@@ -40,28 +40,11 @@ export default class Map {
                
                 position: props.coords,
                 map: this.map,
-               //icon: props.iconImage
+              // icon: props.iconImage
             });
-
             if(props.iconImage){
-                //this is not working for some reason
-                const eventTypeString = JSON.stringify(this.eventType);
-                if(eventTypeString === "Wildfire"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/firedept.png");}
-               else if(eventTypeString === "SinkingIsland"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/marina.png");}
-               else if(eventTypeString === "MeltingGlacier"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");}
-                else if(eventTypeString ===  "Drought"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/orange-dot.png");}
-               else if(eventTypeString === "Flood"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/flag.png");}
-              else  if(eventTypeString ===  "Hurricane"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/pink-dot.png");}
-               else if(eventTypeString === "Earthquake"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/green-dot.png");}
-                else if(eventTypeString === "Tsunami"){
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/waterfalls.png");}
+                //set icon image
+                marker.setIcon(props.iconImage);
 
             }
            

@@ -124,7 +124,25 @@ export class FormModal extends Modal {
     submit = (event, resolve) => {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
-
+        const imageURL1;  
+        const type2 = 
+        rawFormData.type.split(" ").join("");
+        if(type2 === "Wildfire"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";}
+       else if(type2 === "SinkingIsland"){
+        imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";}
+       else if(type2 === "MeltingGlacier"){
+        imageURL1 = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";}
+        else if(type2 ===  "Drought"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";}
+       else if(type2 === "Flood"){
+        imageURL1 = "http://maps.google.com/mapfiles/ms/icons/flag.png";}
+      else  if(type2 ===  "Hurricane"){
+        imageURL1 = "http://maps.google.com/mapfiles/ms/icons/pink-dot.png";}
+       else if(type2 === "Earthquake"){
+        imageURL1 = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";}
+        else if(type2 === "Tsunami"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";}
         const data = {
             coords: {
                lat:parseInt(rawFormData.lati),lng:parseInt(rawFormData.long)
@@ -133,7 +151,7 @@ export class FormModal extends Modal {
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage:"https://www.pngitem.com/pimgs/m/676-6763048_google-maps-icon-plus-drive-play-png-and.png"
+            iconImage: imageURL1
 
         }
 
