@@ -73,13 +73,16 @@ export class FormModal extends Modal {
         this.form.appendChild(message);
 
         //second arg is the key value in the eventual form object
+        createInput('Full Name', 'UserName', this.form);
         createInput('Location Name', 'LocName', this.form);
         const options = ['Wildfire', 'Sinking Island', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami'];
         createOptions(options, 'type', this.form);
         createInput('Latitude', 'lati', this.form);
         createInput('Longitude', 'long', this.form);
         createInput('Description of Location', 'desc', this.form);
-        createInput('Image URL of location', 'imageURL', this.form)
+        createInput('Image URL of location', 'imageURL', this.form);
+        createInput('Date Of Event', 'EventDate', this.form);
+        
 
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
@@ -156,11 +159,13 @@ export class FormModal extends Modal {
             coords: {
                 lat: parseInt(rawFormData.lati), lng: parseInt(rawFormData.long)
             },
+            Username: rawFormData.UserName,
             LocationName: rawFormData.LocName,
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage: imageURL1
+            iconImage: imageURL1,
+            DateOfEvent: rawFormData.EventDate
         }
 
         MarkerService.insertMarker(data);
