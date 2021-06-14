@@ -69,7 +69,7 @@ export default class Map {
            // use this in the future( to add the name of the location along with the creator name and the location image)
             if (props.content) {
                const infowindow = new google.maps.InfoWindow({
-                 content: props.content
+                 content: '<h1> '+props.LocationName +'<h1>'+ props.content + '<img src= alt='+imageURL+'></img>'
                }); 
         
                
