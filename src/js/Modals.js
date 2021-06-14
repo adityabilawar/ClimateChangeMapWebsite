@@ -158,7 +158,7 @@ export class FormModal extends Modal {
         else if (eventType === "RisingTemperatures") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/hotsprings.png";
         }
-        else if (eventType === "Rising Ocean Temperatures") {
+        else if (eventType === "RisingOceanTemperatures") {
             imageURL1 = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
         }
         const data = {
