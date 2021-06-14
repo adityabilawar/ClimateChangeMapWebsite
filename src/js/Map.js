@@ -64,22 +64,18 @@ export default class Map {
             }
            
 
-            //check content(this has the location description)
-            //use this in the future( to add the name of the location along with the creator name and the location image)
-            //if (props.content) {
-               // const infowindow = new google.maps.InfoWindow({
-                   // content: props.content
-              //  }); 
-               if (props.content) {
-                    const infowindow = new google.maps.InfoWindow({
-                       content:props.content
-                    });
-
+          //  check content(this has the location description)
+           // use this in the future( to add the name of the location along with the creator name and the location image)
+            if (props.content) {
+               const infowindow = new google.maps.InfoWindow({
+                 content: props.content
+               }); 
+        
                
-                marker.addListener('click', function () {
-                    //fix this, this zooms and centers onto location clicked
-                    //map.setZoom(8);
-                    //map.setCenter(marker.getPosition() as google.maps.LatLng);
+               marker.addListener('click', function () {
+                   // fix this, this zooms and centers onto location clicked
+                  //  map.setZoom(8);
+                  //  map.setCenter(marker.getPosition() as google.maps.LatLng);
                     infowindow.open(map, marker);
                 });
             }
