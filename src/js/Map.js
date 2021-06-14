@@ -44,7 +44,7 @@ export default class Map {
             });
             if(props.iconImage){
                 //set icon image
-                marker.setIcon(props.iconImage);
+               // marker.setIcon(props.iconImage);
 
             }
            
