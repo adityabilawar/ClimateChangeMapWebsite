@@ -45,7 +45,24 @@ export default class Map {
             if(props.iconImage){
                 //set icon image
                // marker.setIcon(props.iconImage);
-
+               const imageURL1 = "";
+               if(eventType === "Wildfire"){
+                imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";}
+           else if(eventType === "SinkingIsland"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";}
+           else if(eventType === "MeltingGlacier"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";}
+            else if(eventType ===  "Drought"){
+                imageURL1 = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";}
+           else if(eventType === "Flood"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/flag.png";}
+          else  if(eventType ===  "Hurricane"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/pink-dot.png";}
+           else if(eventType === "Earthquake"){
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";}
+            else if(eventType === "Tsunami"){
+                imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";}
+                marker.setIcon(imageURL1);
             }
            
 
