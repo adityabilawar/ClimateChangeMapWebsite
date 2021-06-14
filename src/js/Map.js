@@ -40,7 +40,7 @@ export default class Map {
             const marker = new google.maps.Marker({
                 position: props.coords,
                 map: this.map,
-                // icon: props.iconImage
+                 icon: props.iconImage
             });
 
             //  check content(this has the location description)
