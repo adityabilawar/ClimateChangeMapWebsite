@@ -81,7 +81,7 @@ export class FormModal extends Modal {
         createInput('Longitude', 'long', this.form);
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form);
-        createInput('Date Of Event', 'EventDate', this.form);
+        createInput('Year Of Event', 'EventDate', this.form);
         
 
 
@@ -159,7 +159,7 @@ export class FormModal extends Modal {
             coords: {
                 lat: parseInt(rawFormData.lati), lng: parseInt(rawFormData.long)
             },
-            Username: rawFormData.UserName,
+            Username1: rawFormData.UserName,
             LocationName: rawFormData.LocName,
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
