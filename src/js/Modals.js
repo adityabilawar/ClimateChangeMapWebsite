@@ -125,35 +125,42 @@ export class FormModal extends Modal {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
         const eventType1 = rawFormData.type;
-        const  eventType = 
-        eventType1.split(" ").join("");
-        const imageURL1 = "";
-               if(eventType === "Wildfire"){
-                imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";}
-           else if(eventType === "SinkingIsland"){
-            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";}
-           else if(eventType === "MeltingGlacier"){
-            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";}
-            else if(eventType ===  "Drought"){
-                imageURL1 = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";}
-           else if(eventType === "Flood"){
-            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/flag.png";}
-          else  if(eventType ===  "Hurricane"){
-            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/pink-dot.png";}
-           else if(eventType === "Earthquake"){
-            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";}
-            else if(eventType === "Tsunami"){
-                imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";}
+        const eventType =
+            eventType1.split(" ").join("");
+        let imageURL1 = "";
+        if (eventType === "Wildfire") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";
+        }
+        else if (eventType === "SinkingIsland") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";
+        }
+        else if (eventType === "MeltingGlacier") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+        }
+        else if (eventType === "Drought") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";
+        }
+        else if (eventType === "Flood") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/flag.png";
+        }
+        else if (eventType === "Hurricane") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/pink-dot.png";
+        }
+        else if (eventType === "Earthquake") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+        }
+        else if (eventType === "Tsunami") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";
+        }
         const data = {
             coords: {
-               lat:parseInt(rawFormData.lati),lng:parseInt(rawFormData.long)
+                lat: parseInt(rawFormData.lati), lng: parseInt(rawFormData.long)
             },
             LocationName: rawFormData.LocName,
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
             iconImage: imageURL1
-
         }
 
         MarkerService.insertMarker(data);
