@@ -151,7 +151,7 @@ export class FormModal extends Modal {
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage: imageURL1
+            iconImage: rawFormData.imageURL1
 
         }
 
