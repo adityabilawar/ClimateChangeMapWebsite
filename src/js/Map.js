@@ -48,12 +48,22 @@ export default class Map {
             const container = document.createDocumentFragment();
 
             const h1 = document.createElement("h1");
-            const h1Text = document.createTextNode("text");
+            const h1Text = document.createTextNode(props.LocationName);
             h1.appendChild(h1Text);
             container.appendChild(h1);
 
+            const p = document.createElement("p");
+            const pText = document.createTextNode(props.content);
+            p.appendChild(pText);
+            container.appendChild(p);
+
+            const p1 = document.createElement("p");
+            const pText1 = document.createTextNode("Contributer: "+ props.Username);
+            p1.appendChild(pText1);
+            container.appendChild(p1);
+
             const img = document.createElement("img");
-            img.src = "stackhack101.herokuapp.com/anishjha";
+            img.src = imageURL;
             container.appendChild(img);
 
             if (props.content) {
