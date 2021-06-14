@@ -22,6 +22,7 @@ export default class Map {
     }
 
     async refreshMarkers() {
+        console.log('Refreshing markers...');
         //Array of markers
         const markers = await MarkerService.getMarkers();
         
@@ -35,9 +36,7 @@ export default class Map {
         
         //add Marker Function 
         function addMarker(props) {
-            console.log(this);
-            const marker = new google.maps.Marker({
-               
+            const marker = new google.maps.Marker({   
                 position: props.coords,
                 map: this.map,
                // icon: props.iconImage
