@@ -129,7 +129,7 @@ export class FormModal extends Modal {
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
         const eventType = rawFormData.type.split(" ").join("");
 
-        const imageURLs = {
+        const IconURLs = {
             "Wildfire": "http://maps.google.com/mapfiles/ms/icons/firedept.png",
             "RisingSeaLevels": "http://maps.google.com/mapfiles/ms/icons/marina.png",
             "MeltingGlacier": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
@@ -152,7 +152,7 @@ export class FormModal extends Modal {
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage: imageUrls[eventType],
+            iconImage: rawFormData.IconURLs.eventType,
             DateOfEvent: rawFormData.EventDate
         }
 
