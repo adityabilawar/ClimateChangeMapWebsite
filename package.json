@@ -5,6 +5,7 @@
   "private": "true",
   "scripts": {
     "serve": "./node_modules/.bin/webpack serve  --node-env=development",
+    "dev": "./node_modules/.bin/webpack build --node-env=development",
     "prod": "./node_modules/.bin/webpack  --node-env=production",
     "build": "./node_modules/.bin/webpack build  --node-env=production",
     "heroku-postbuild": "./node_modules/.bin/webpack  --node-env=production"
