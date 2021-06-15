@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/markers';
+const url = __API__ + '/api/markers';
 
 class MarkerService {
     static getMarkers() {

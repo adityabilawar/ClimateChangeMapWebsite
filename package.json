@@ -4,10 +4,10 @@
   "description": "climate change map",
   "private": "true",
   "scripts": {
-    "serve": "./node_modules/.bin/webpack serve --mode development",
-    "prod": "./node_modules/.bin/webpack --mode production",
-    "build": "./node_modules/.bin/webpack build --mode production",
-    "heroku-postbuild": "./node_modules/.bin/webpack --mode production"
+    "serve": "./node_modules/.bin/webpack serve  --node-env=development",
+    "prod": "./node_modules/.bin/webpack  --node-env=production",
+    "build": "./node_modules/.bin/webpack build  --node-env=production",
+    "heroku-postbuild": "./node_modules/.bin/webpack  --node-env=production"
   },
   "repository": {
     "type": "git",
