@@ -72,8 +72,7 @@ export default class Map {
                     content: container
                 });
 
-                //check if this works
-                map.setOptions({ maxZoom: 15 });
+                
 
                 marker.addListener('click', function () {
                     // fix this, this zooms and centers onto location clicked
