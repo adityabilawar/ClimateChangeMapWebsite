@@ -279,3 +279,18 @@ button.yes, button.no {
         transform: scale(1);
     }
 }
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #455954;
+    color: black;
+    font-size: 30px;
+  }
+
+  /* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
