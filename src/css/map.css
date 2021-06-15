@@ -1,12 +1,23 @@
 #map {
     height: 800px;
     width: 100%;
-
-    overflow: hidden;
-    border-radius: 10px;
+    margin: 0 0 20px 0;
 }
 
 #add {
     padding: 10px;
     border-radius: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: white;
+    font-size: 30px;
 }
