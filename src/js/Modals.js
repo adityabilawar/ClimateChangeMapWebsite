@@ -82,7 +82,7 @@ export class FormModal extends Modal {
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form);
         createInput('Year Of Event', 'EventDate', this.form);
-
+        
 
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
@@ -127,22 +127,40 @@ export class FormModal extends Modal {
     submit = (event, resolve) => {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
-        const eventType = rawFormData.type.split(" ").join("");
-
-        const IconURLs = {
-            "Wildfire": "http://maps.google.com/mapfiles/ms/icons/firedept.png",
-            "RisingSeaLevels": "http://maps.google.com/mapfiles/ms/icons/marina.png",
-            "MeltingGlacier": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            "Drought": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
-            "Flood": "http://maps.google.com/mapfiles/ms/icons/flag.png",
-            "Hurricane": "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
-            "Earthquake": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            "Tsunami": "http://maps.google.com/mapfiles/ms/icons/waterfalls.png",
-            "RisingTemperatures": "http://maps.google.com/mapfiles/ms/icons/hotsprings.png",
-            "RisingOceanTemperatures": "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+        const eventType1 = rawFormData.type;
+        const eventType =
+            eventType1.split(" ").join("");
+        let imageURL1 = "";
+        if (eventType === "Wildfire") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/firedept.png";
         }
-
-
+        else if (eventType === "RisingSeaLevels") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/marina.png";
+        }
+        else if (eventType === "MeltingGlacier") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/blue-dot.png";
+        }
+        else if (eventType === "Drought") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/orange-dot.png";
+        }
+        else if (eventType === "Flood") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/flag.png";
+        }
+        else if (eventType === "Hurricane") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/pink-dot.png";
+        }
+        else if (eventType === "Earthquake") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+        }
+        else if (eventType === "Tsunami") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/waterfalls.png";
+        }
+        else if (eventType === "RisingTemperatures") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/hotsprings.png";
+        }
+        else if (eventType === "RisingOceanTemperatures") {
+            imageURL1 = "http://maps.google.com/mapfiles/ms/icons/purple-dot.png";
+        }
         const data = {
             coords: {
                 lat: parseInt(rawFormData.lati), lng: parseInt(rawFormData.long)
@@ -152,7 +170,7 @@ export class FormModal extends Modal {
             imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage: rawFormData.IconURLs.eventType,
+            iconImage: imageURL1,
             DateOfEvent: rawFormData.EventDate
         }
 
