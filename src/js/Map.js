@@ -12,13 +12,16 @@ export default class Map {
 
         loader.load().then(() => {
             this.map = new google.maps.Map(document.getElementById("map"), {
-                //check if this works
                 center,
                 zoom,
+                mapTypeId: "satellite",
+                minZoom: 2.7, 
+                maxZoom: 100
             });
         });
 
         this.refreshMarkers();
+      
     }
 
     async refreshMarkers() {
@@ -40,7 +43,7 @@ export default class Map {
             const marker = new google.maps.Marker({
                 position: props.coords,
                 map: this.map,
-                // icon: props.iconImage
+                 icon: props.iconImage
             });
 
             //  check content(this has the location description)
@@ -48,13 +51,23 @@ export default class Map {
             const container = document.createDocumentFragment();
 
             const h1 = document.createElement("h1");
-            const h1Text = document.createTextNode("text");
+            const h1Text = document.createTextNode(props.LocationName);
             h1.appendChild(h1Text);
             container.appendChild(h1);
 
+            const p = document.createElement("p");
+            const pText = document.createTextNode(props.content);
+            p.appendChild(pText);
+            container.appendChild(p);
+
             const img = document.createElement("img");
-            img.src = "stackhack101.herokuapp.com/anishjha";
+            img.src = props.imageURL;
             container.appendChild(img);
+
+            const p1 = document.createElement("p");
+            const pText1 = document.createTextNode("Contributer: "+ props.Username);
+            p1.appendChild(pText1);
+            container.appendChild(p1);
 
             if (props.content) {
                 const infowindow = new google.maps.InfoWindow({
@@ -62,6 +75,7 @@ export default class Map {
                     content: container
                 });
 
+                
 
                 marker.addListener('click', function () {
                     // fix this, this zooms and centers onto location clicked
