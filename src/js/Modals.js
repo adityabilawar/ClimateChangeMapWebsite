@@ -127,19 +127,19 @@ export class FormModal extends Modal {
     submit = (event, resolve) => {
         event.preventDefault();
         const rawFormData = Object.fromEntries(new FormData(this.form).entries());
-        const eventType = rawFormData.type.split(" ").join("");
+        console.log(rawFormData);
 
-        const imageURLs = {
+        const iconURLs = {
             "Wildfire": "http://maps.google.com/mapfiles/ms/icons/firedept.png",
-            "RisingSeaLevels": "http://maps.google.com/mapfiles/ms/icons/marina.png",
-            "MeltingGlacier": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            "Rising Sea Levels": "http://maps.google.com/mapfiles/ms/icons/marina.png",
+            "Melting Glacier": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
             "Drought": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
             "Flood": "http://maps.google.com/mapfiles/ms/icons/flag.png",
             "Hurricane": "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
             "Earthquake": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
             "Tsunami": "http://maps.google.com/mapfiles/ms/icons/waterfalls.png",
-            "RisingTemperatures": "http://maps.google.com/mapfiles/ms/icons/hotsprings.png",
-            "RisingOceanTemperatures": "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+            "Rising Temperatures": "http://maps.google.com/mapfiles/ms/icons/hotsprings.png",
+            "Rising Ocean Temperatures": "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
         }
 
 
@@ -149,10 +149,10 @@ export class FormModal extends Modal {
             },
             Username1: rawFormData.UserName,
             LocationName: rawFormData.LocName,
-            imageURL: imageUrls[eventType],
+            imageURL: rawFormData.imageURL,
             desc: rawFormData.desc,
             event: rawFormData.type,
-            iconImage: imageURL1,
+            iconImage: iconURLs[rawFormData.type],
             DateOfEvent: rawFormData.EventDate
         }
 
