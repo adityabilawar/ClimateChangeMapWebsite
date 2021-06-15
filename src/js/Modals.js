@@ -130,16 +130,16 @@ export class FormModal extends Modal {
         console.log(rawFormData);
 
         const iconURLs = {
-            "Wildfire": "http://maps.google.com/mapfiles/ms/icons/firedept.png",
-            "Rising Sea Levels": "http://maps.google.com/mapfiles/ms/icons/marina.png",
-            "Melting Glacier": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            "Drought": "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
-            "Flood": "http://maps.google.com/mapfiles/ms/icons/flag.png",
-            "Hurricane": "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
-            "Earthquake": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            "Tsunami": "http://maps.google.com/mapfiles/ms/icons/waterfalls.png",
-            "Rising Temperatures": "http://maps.google.com/mapfiles/ms/icons/hotsprings.png",
-            "Rising Ocean Temperatures": "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+            "Wildfire": "https://maps.google.com/mapfiles/ms/icons/firedept.png",
+            "Rising Sea Levels": "https://maps.google.com/mapfiles/ms/icons/marina.png",
+            "Melting Glacier": "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            "Drought": "https://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+            "Flood": "https://maps.google.com/mapfiles/ms/icons/flag.png",
+            "Hurricane": "https://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+            "Earthquake": "https://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            "Tsunami": "https://maps.google.com/mapfiles/ms/icons/waterfalls.png",
+            "Rising Temperatures": "https://maps.google.com/mapfiles/ms/icons/hotsprings.png",
+            "Rising Ocean Temperatures": "https://maps.google.com/mapfiles/ms/icons/purple-dot.png",
         }
 
 
