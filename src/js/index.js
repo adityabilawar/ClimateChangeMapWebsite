@@ -1,4 +1,5 @@
 import '../css/main.css';
+import '../css/map.css';
 import Map from './Map';
 import form from './form';
 
