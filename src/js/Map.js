@@ -15,7 +15,7 @@ export default class Map {
                 center,
                 zoom,
                 mapTypeId: "satellite",
-                minZoom: 1.7, 
+                minZoom: 2.7, 
                 maxZoom: 100
             });
         });
