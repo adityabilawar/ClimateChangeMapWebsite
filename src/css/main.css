@@ -35,8 +35,6 @@
     }
 }
 
-
-
 body {
     background: var(--main-background);
     color: var(--main-text-color);
@@ -274,11 +272,11 @@ button.yes, button.no {
     background: white;
     color: black;
     font-size: 30px;
-  }
+}
 
-  /* Add a black background color to the top navigation */
+/* Add a black background color to the top navigation */
+
 .topnav {
     background-color: #333;
     overflow: hidden;
-  }
-  
+}
