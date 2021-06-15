@@ -12,13 +12,14 @@ export default class Map {
 
         loader.load().then(() => {
             this.map = new google.maps.Map(document.getElementById("map"), {
-                //check if this works
                 center,
                 zoom,
             });
         });
 
         this.refreshMarkers();
+        //check if this works
+        map.setOptions({ maxZoom: 15 });
     }
 
     async refreshMarkers() {
