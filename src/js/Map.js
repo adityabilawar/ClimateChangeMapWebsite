@@ -14,6 +14,9 @@ export default class Map {
             this.map = new google.maps.Map(document.getElementById("map"), {
                 center,
                 zoom,
+                mapTypeId: "satellite",
+                minZoom: 1.7, 
+                maxZoom: 100
             });
         });
 
