@@ -149,7 +149,7 @@ export class FormModal extends Modal {
             },
             Username1: rawFormData.UserName,
             LocationName: rawFormData.LocName,
-            imageURL: rawFormData.imageURLs.eventType,
+            imageURL: imageUrls[eventType],
             desc: rawFormData.desc,
             event: rawFormData.type,
             iconImage: imageURL1,
