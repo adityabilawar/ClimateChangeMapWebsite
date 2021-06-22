@@ -183,6 +183,7 @@ export class FormModal extends Modal {
                 }
         
                 MarkerService.insertMarker(data);
+                //fix this
                 this.hideRemove();
         
                 resolve(true);
