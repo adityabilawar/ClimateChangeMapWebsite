@@ -1,5 +1,6 @@
 import createElement from './ElementCreation.js';
 import MarkerService from './MarkerService';
+import axios from 'axios';
 //FIXME: element.animate()?
 export class Modal {
     modal;
@@ -77,8 +78,8 @@ export class FormModal extends Modal {
         createInput('Location Name', 'LocName', this.form);
         const options = ['Wildfire', 'Rising Sea Levels', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami', 'Rising Temperatures', 'Rising Ocean Temperatures'];
         createOptions(options, 'type', this.form);
-        createInput('Latitude', 'lati', this.form);
-        createInput('Longitude', 'long', this.form);
+        //createInput('Latitude', 'lati', this.form);
+        //createInput('Longitude', 'long', this.form);
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form);
         createInput('Year Of Event', 'EventDate', this.form);
@@ -143,23 +144,58 @@ export class FormModal extends Modal {
         }
 
 
-        const data = {
-            coords: {
-                lat: parseInt(rawFormData.lati), lng: parseInt(rawFormData.long)
-            },
-            Username1: rawFormData.UserName,
-            LocationName: rawFormData.LocName,
-            imageURL: rawFormData.imageURL,
-            desc: rawFormData.desc,
-            event: rawFormData.type,
-            iconImage: iconURLs[rawFormData.type],
-            DateOfEvent: rawFormData.EventDate
+ 
+      
+        var  latGeo = 0;
+        var  lngGeo = 0;
+        geocode();
+
+
+        function geocode(){
+           
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                params:{
+                    address: rawFormData.LocName,
+                    key:'AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I'
+                }
+            })
+            .then(function(response){
+                
+                //log full response
+                console.log(response);
+                console.log(response.data.results[0].geometry.location.lat);
+                console.log(response.data.results[0].geometry.location.lng);
+                //assign lat and lng coords
+                latGeo = response.data.results[0].geometry.location.lat;
+                lngGeo = response.data.results[0].geometry.location.lng;
+
+                const data = {
+                    coords: {
+                       lat: latGeo, lng: lngGeo
+                    },
+                    Username1: rawFormData.UserName,
+                    LocationName: rawFormData.LocName,
+                    imageURL: rawFormData.imageURL,
+                    desc: rawFormData.desc,
+                    event: rawFormData.type,
+                    iconImage: iconURLs[rawFormData.type],
+                    DateOfEvent: rawFormData.EventDate
+                }
+        
+                MarkerService.insertMarker(data);
+                this.hideRemove();
+        
+                resolve(true);
+
+                return response;
+            })
+             .catch(function(error){
+
+                 console.log(error);
+               });
         }
-
-        MarkerService.insertMarker(data);
-        this.hideRemove();
-
-        resolve(true);
+            
+        
     }
 }
 
