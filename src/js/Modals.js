@@ -149,7 +149,7 @@ export class FormModal extends Modal {
         var  latGeo = 0;
         var  lngGeo = 0;
         geocode();
-
+        this.hideRemove();
 
         function geocode(){
            
@@ -183,8 +183,7 @@ export class FormModal extends Modal {
                 }
         
                 MarkerService.insertMarker(data);
-                //fix this
-                this.hideRemove();
+                
         
                 resolve(true);
 
