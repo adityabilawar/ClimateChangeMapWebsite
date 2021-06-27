@@ -23,12 +23,15 @@
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.11.4",
     "axios": "^0.21.1",
-    "geocoder": "^0.2.3"
+    "express": "^4.17.1",
+    "geocoder": "^0.2.3",
+    "nodemailer": "^6.6.2"
   },
   "devDependencies": {
     "css-loader": "^5.2.6",
     "dotenv": "^10.0.0",
     "html-webpack-plugin": "^5.3.1",
+    "nodemon": "^2.0.7",
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
