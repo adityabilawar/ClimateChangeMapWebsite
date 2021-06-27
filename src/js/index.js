@@ -11,3 +11,8 @@ form.init(update);
 function update() {
     map.refreshMarkers();
 }
+
+const downloadButton = document.getElementById('download');
+downloadButton.addEventListener('click', () => {
+    
+});
