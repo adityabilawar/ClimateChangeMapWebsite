@@ -30,7 +30,7 @@ app.post('/', (req, res)=>{
       })
 
       const mailOptions = {
-        from: 'adichatbot.ai@gmail.com' , // //req.body.email sender address
+        from: req.body.email, //sender address
         to: 'climap.org@gmail.com', // list of receivers
         subject: `Message from ${req.body.email}: ${req.body.subject}`, // Subject line
         text: req.body.message
