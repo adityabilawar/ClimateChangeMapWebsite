@@ -7,11 +7,12 @@ const nodemailer = require("nodemailer");
 const { getMaxListeners } = require('process');
 
 //Middleware
-app.use(express.static('src'));
-app.use(express.json())
+//app.use(express.static('src'));
+
 
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname + '/dist'));
+app.use(express.json());
 
 // send the user to index html page inspite of the url
 app.get('*', (req, res) => {
