@@ -43,7 +43,9 @@ body {
     margin: 0;
     user-select: none;
 }
-
+.footer {
+    background-color: #00d07f;
+}
 a {
     color: var(--accent-color);
 }
