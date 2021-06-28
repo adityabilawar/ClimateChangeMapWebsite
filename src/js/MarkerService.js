@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const url = __API__ + '/api/markers';
-
 class MarkerService {
     static getMarkers() {
         return new Promise((resolve, reject) => {
