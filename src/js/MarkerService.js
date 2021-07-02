@@ -4,6 +4,7 @@ class MarkerService {
     static getMarkers() {
         return new Promise((resolve, reject) => {
             try {
+                console.log(url);
                 axios.get(url).then((res) => {
                     const data = res.data;
                     resolve(
