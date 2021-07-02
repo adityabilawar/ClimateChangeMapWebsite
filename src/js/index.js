@@ -18,5 +18,5 @@ function update() {
 
 const downloadButton = document.getElementById('download');
 downloadButton.addEventListener('click', () => {
-    window.open(`${__URL__}/download`);
+    window.open(`${__API__}/api/download`);
 });

@@ -4,8 +4,8 @@ class MarkerService {
     static getMarkers() {
         return new Promise((resolve, reject) => {
             try {
-                console.log(url);
-                axios.get(url).then((res) => {
+                console.log(apiURL);
+                axios.get(apiURL).then((res) => {
                     const data = res.data;
                     resolve(
                         data.map(marker => ({
@@ -21,7 +21,7 @@ class MarkerService {
 
     static insertMarker(data) {
         console.log(data);
-        return axios.post(url, data);
+        return axios.post(apiURL, data);
     }
 
     static deleteMarker(id) {
