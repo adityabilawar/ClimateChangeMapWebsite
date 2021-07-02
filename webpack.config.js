@@ -29,7 +29,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.html',
-            template: 'src/contact.html'
         }),
         new webpack.DefinePlugin({
             __API__: JSON.stringify(apiHost)
