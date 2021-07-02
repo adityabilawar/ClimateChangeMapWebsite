@@ -25,7 +25,7 @@ class MarkerService {
     }
 
     static deleteMarker(id) {
-        return axios.delete(`${url}${id}`)
+        return axios.delete(`${apiURL}${id}`)
     }
 }
 

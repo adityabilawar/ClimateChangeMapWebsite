@@ -5,7 +5,7 @@ import form from './form';
 import axios from 'axios';
 
 // possibly bad lol
-global.url = __API__ + '/api/markers';
+global.apiURL = __API__ + '/api/markers';
 
 const map = new Map({ lat: 0, lng: 0 }, 2.7);
 
@@ -18,5 +18,5 @@ function update() {
 
 const downloadButton = document.getElementById('download');
 downloadButton.addEventListener('click', () => {
-    window.open(`${url}/download`);
+    window.open(`${__URL__}/download`);
 });
