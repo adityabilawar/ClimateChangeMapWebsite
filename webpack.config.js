@@ -32,10 +32,6 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html',
         }),
-        new HtmlWebpackPlugin({
-            filename: 'contact.html',
-            template: 'src/contact.html',
-        }),
         new webpack.DefinePlugin({
             __API__: JSON.stringify(apiHost)
         })
