@@ -28,9 +28,19 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            template: './src/index.html',
             inject: 'body',
-            filename: 'index.html',
-            template: 'src/index.html',
+            filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/about.html',
+            inject: 'body',
+            filename: 'about.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/contact.html',
+            inject: 'body',
+            filename: 'contact.html'
         }),
         new webpack.DefinePlugin({
             __API__: JSON.stringify(apiHost)
@@ -44,5 +54,16 @@ module.exports = {
         contentBase: path.join(__dirname, '../server/dist'),
         port: 8000,
         open: true,
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true
+            }),
+            new OptimizeCssAssetsPlugin({})
+        ]
     }
 };
