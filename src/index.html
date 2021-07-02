@@ -6,25 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Climap</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>Climap</header>
+  <div>
+    <header>Climap</header>
+    <div class="topnav">
+      <a class="active" href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="#about">About Us</a>
+    </div>
+  </div>  
   <div id="map"></div>
   <div class="actions">
     <button id="add">Contribute Data</button>
     <button id="download">Download Data</button>
   </div>
 
-  <div id="contact-us">
-     <form class="contact-form">
-        <h2>Contact Us</h2>
-        <input type="text" id="name" placeholder="Full name"></br>
-        <input type="email" id="email" placeholder="Email"></br>
-        <input type="test" id="subject" placeholder="Subject"></br>
-        <textarea id="message" placeholder="message" cols="30" rows="10"></textarea></br>
-        <input type="submit" class="submit" value="Send Message">
-     </form> 
+  <div class="footer">
+    <div class="text-center center-block">
+      <a href="https://www.facebook.com/profile.php?id=100070133100720"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+      <a href="https://twitter.com/Climap5"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+      <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+    </div>
   </div>
 </body>
 </html>

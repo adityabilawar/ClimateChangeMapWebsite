@@ -8,6 +8,7 @@ import contact from './contact'
 // possibly bad lol
 global.url = __API__ + '/api/markers';
 
+
 const map = new Map({ lat: 0, lng: 0 }, 2.7);
 
 
