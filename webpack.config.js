@@ -28,8 +28,13 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            inject: 'body',
+            filename: 'index.html',
             template: 'src/index.html',
-            template: 'src/contact.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contact.html',
+            template: 'src/contact.html',
         }),
         new webpack.DefinePlugin({
             __API__: JSON.stringify(apiHost)
