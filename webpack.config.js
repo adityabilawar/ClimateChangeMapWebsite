@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack= require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
+
 
 let setupAPI = function () {
     const hosts = {
@@ -62,8 +64,7 @@ module.exports = {
                 cache: true,
                 parallel: true,
                 sourceMap: true
-            }),
-            new OptimizeCssAssetsPlugin({})
+            })
         ]
     }
 };
