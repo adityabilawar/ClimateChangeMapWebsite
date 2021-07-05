@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack= require('webpack');
-const TerserPlugin = require('terser-webpack-plugin');
 
 
 let setupAPI = function () {
@@ -56,15 +55,5 @@ module.exports = {
         contentBase: path.join(__dirname, '../server/dist'),
         port: 8000,
         open: true,
-    },
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new TerserPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true
-            })
-        ]
     }
 };
