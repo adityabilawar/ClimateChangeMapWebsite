@@ -79,9 +79,11 @@ export default class Map {
 
                 marker.addListener('click', function () {
                     // fix this, this zooms and centers onto location clicked
-                    //  map.setZoom(8);
-                    //  map.setCenter(marker.getPosition() as google.maps.LatLng);
                     infowindow.open(map, marker);
+                    //map.setZoom(9);
+                    //map.setCenter(marker.getPosition());
+                    //smoothZoom(map, max, cnt + 1);
+                  
                 });
             }
         }
