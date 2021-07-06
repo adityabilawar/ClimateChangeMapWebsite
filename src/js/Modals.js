@@ -75,15 +75,14 @@ export class FormModal extends Modal {
 
         //second arg is the key value in the eventual form object
         createInput('Full Name', 'UserName', this.form);
-        createInput('Location Name', 'LocName', this.form);
         const options = ['Wildfire', 'Rising Sea Levels', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami', 'Rising Temperatures', 'Rising Ocean Temperatures'];
         createOptions(options, 'type', this.form);
+        createInput('Location Name', 'LocName', this.form);
         //createInput('Latitude', 'lati', this.form);
         //createInput('Longitude', 'long', this.form);
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form);
         createInput('Year Of Event', 'EventDate', this.form);
-
 
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
