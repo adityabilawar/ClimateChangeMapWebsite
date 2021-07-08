@@ -186,7 +186,7 @@ export class FormModal extends Modal {
                 }
         
                 MarkerService.insertMarker(data);
-                
+                console.log("submitted to markerservice")
         
                 resolve(true);
 
