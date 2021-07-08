@@ -176,13 +176,13 @@ export class FormModal extends Modal {
                        lat: latGeo, lng: lngGeo
                     },
                     Username1: rawFormData.UserName,
+                    event: rawFormData.type,
                     LocationName: rawFormData.LocName,
                     imageURL: rawFormData.imageURL,
                     desc: rawFormData.desc,
-                    event: rawFormData.type,
                     iconImage: iconURLs[rawFormData.type],
-                    StartDateOfEvent: rawFormData.StartEventDate,
-                    EndDateOfEvent: rawFormData.EndEventDate
+                    StartDateOfEvent1: rawFormData.StartEventDate,
+                    EndDateOfEvent1: rawFormData.EndEventDate
                 }
         
                 MarkerService.insertMarker(data);
