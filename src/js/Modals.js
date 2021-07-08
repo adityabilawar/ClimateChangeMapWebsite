@@ -86,11 +86,11 @@ export class FormModal extends Modal {
         createInput('End Date Of Event', 'EndEventDate', this.form).disable = true;
         function updateForm(e){
             if(e.target.value==='Wildfire' || e.target.value==='Flood'|| e.target.value==='Hurricane'|| e.target.value==='Drought'){
-                createInput('Start Date Of Event', 'StartEventDate', this.form).disable = false;
-                createInput('End Date Of Event', 'EndEventDate', this.form).disable = false;
+                this.createInput('Start Date Of Event', 'StartEventDate', this.form).disable = false;
+                this.createInput('End Date Of Event', 'EndEventDate', this.form).disable = false;
             }
             else if(e.target.value==='Tsunami' || e.target.value==='Earthquake') {
-                createInput('Start Date Of Event', 'StartEventDate', this.form).disable = false;
+                this.createInput('Start Date Of Event', 'StartEventDate', this.form).disable = false;
             }
         }
         createInput('Description of Location', 'desc', this.form);
