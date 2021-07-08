@@ -80,9 +80,12 @@ export class FormModal extends Modal {
         createInput('Location Name', 'LocName', this.form);
         //createInput('Latitude', 'lati', this.form);
         //createInput('Longitude', 'long', this.form);
+        //createInput('Year Of Event', 'EventDate', this.form);
+        createInput('Start Date Of Event', 'StartEventDate', this.form);
+        createInput('End Date Of Event', 'EndEventDate', this.form);
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form);
-        createInput('Year Of Event', 'EventDate', this.form);
+        
 
 
         const buttonContainer = createElement('div', '', 'modal-button-container');
@@ -178,7 +181,8 @@ export class FormModal extends Modal {
                     desc: rawFormData.desc,
                     event: rawFormData.type,
                     iconImage: iconURLs[rawFormData.type],
-                    DateOfEvent: rawFormData.EventDate
+                    StartDateOfEvent: rawFormData.StartEventDate,
+                    EndDateOfEvent: rawFormData.EndEventDate
                 }
         
                 MarkerService.insertMarker(data);
