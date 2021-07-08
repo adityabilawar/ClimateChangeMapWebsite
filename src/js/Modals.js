@@ -77,12 +77,22 @@ export class FormModal extends Modal {
         createInput('Full Name', 'UserName', this.form);
         const options = ['Wildfire', 'Rising Sea Levels', 'Melting Glacier', 'Drought', 'Flood', 'Hurricane', 'Earthquake', 'Tsunami', 'Rising Temperatures', 'Rising Ocean Temperatures'];
         createOptions(options, 'type', this.form);
+        options.addEventListener('change', updateForm);
         createInput('Location Name', 'LocName', this.form);
         //createInput('Latitude', 'lati', this.form);
         //createInput('Longitude', 'long', this.form);
         //createInput('Year Of Event', 'EventDate', this.form);
-        createInput('Start Date Of Event', 'StartEventDate', this.form);
-        createInput('End Date Of Event', 'EndEventDate', this.form);
+        createInput('Start Date Of Event', 'StartEventDate', this.form).disable = true;
+        createInput('End Date Of Event', 'EndEventDate', this.form).disable = true;
+        function updateForm(e){
+            if(e.target.value==='Wildfire' || e.target.value==='Flood'|| e.target.value==='Hurricane'|| e.target.value==='Drought'){
+                createInput('Start Date Of Event', 'StartEventDate', this.form).disable = false;
+                createInput('End Date Of Event', 'EndEventDate', this.form).disable = false;
+            }
+            else if(e.target.value==='Tsunami' || e.target.value==='Earthquake') {
+                createInput('Start Date Of Event', 'StartEventDate', this.form).disable = false;
+            }
+        }
         createInput('Description of Location', 'desc', this.form);
         createInput('Image URL of location', 'imageURL', this.form);
         
@@ -186,7 +196,6 @@ export class FormModal extends Modal {
                 }
         
                 MarkerService.insertMarker(data);
-                console.log("submitted to markerservice")
         
                 resolve(true);
 
