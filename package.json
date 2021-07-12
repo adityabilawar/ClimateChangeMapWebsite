@@ -26,7 +26,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "geocoder": "^0.1.0",
-    "mongodb": "^3.6.10"
+    "mongodb": "^3.6.10",
+    "nodemon": "^2.0.12"
   },
   "devDependencies": {
     "css-loader": "^5.2.6",
