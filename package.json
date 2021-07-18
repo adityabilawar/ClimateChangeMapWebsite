@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "climate change map",
   "private": "true",
+  "engines": {
+    "node": "14.15.4"
+  },
   "scripts": {
     "serve": "webpack serve --node-env=development",
     "dev": "webpack build --node-env=development",
