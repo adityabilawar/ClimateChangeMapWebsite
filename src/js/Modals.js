@@ -158,7 +158,7 @@ export class FormModal extends Modal {
             axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
                 params:{
                     address: rawFormData.LocName,
-                    key:'AIzaSyBdZ8GXm2rC-co5WIseA-9sQRtCZATT84I'
+                    key:'INSERT API KEY HERE'
                 }
             })
             .then(function(response){
